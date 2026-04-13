@@ -30,18 +30,18 @@ export default function PortfolioHero() {
     <div style={{ background: "transparent", color: "var(--p-text)", fontFamily: FONT, minHeight: "100vh", display: "flex", flexDirection: "column" }}>
 
       {/* ── Nav ── */}
-      <nav style={{
+      <nav className="p-nav" style={{
         display: "flex", alignItems: "center", justifyContent: "space-between",
         padding: "22px 56px", borderBottom: "1px solid var(--p-nav-border)",
         flexShrink: 0, background: "var(--p-nav-bg)", position: "relative", zIndex: 10,
       }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 10, fontSize: 15, color: "var(--p-heading)" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 10, fontSize: 15, color: "var(--p-heading)", flexShrink: 0 }}>
           <div style={{ width: 22, height: 22, border: `2px solid ${G}`, borderRadius: 3, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
             <div style={{ width: 9, height: 9, background: G, borderRadius: 1 }} />
           </div>
           Nabila Rahman
         </div>
-        <ul style={{ display: "flex", gap: 36, listStyle: "none", margin: 0, padding: 0 }}>
+        <ul className="p-nav-links" style={{ display: "flex", gap: 36, listStyle: "none", margin: 0, padding: 0 }}>
           {navLinks.map(link => (
             <li key={link.label}>
               <a href={link.href} style={{ fontSize: 13, color: link.active ? "var(--p-heading)" : "var(--p-text-muted)", textDecoration: "none", letterSpacing: "0.04em" }}>
@@ -56,7 +56,7 @@ export default function PortfolioHero() {
       <div style={{ position: "relative", flex: 1, display: "flex", background: "transparent" }}>
 
         {/* Left sidebar — center aligned to 2nd grid line (100vw/32) */}
-        <div style={{ width: 'calc(100vw / 16)', flexShrink: 0, position: "relative", zIndex: 2, display: "flex", flexDirection: "column", alignItems: "center" }}>
+        <div className="hero-sidebar" style={{ width: 'calc(100vw / 16)', flexShrink: 0, position: "relative", zIndex: 2, display: "flex", flexDirection: "column", alignItems: "center" }}>
           {/* vertical line */}
           <div style={{ position: "absolute", top: 0, bottom: 0, left: "50%", width: 1, background: "var(--p-sidebar-line)", transform: "translateX(-50%)" }} />
           {/* icons */}
@@ -78,10 +78,10 @@ export default function PortfolioHero() {
         </div>
 
         {/* Main content */}
-        <div style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center", padding: "60px 80px", gap: 64 }}>
+        <div className="hero-main-content" style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center", padding: "60px 80px", gap: 64 }}>
 
           {/* ── Left: text ── */}
-          <div style={{ maxWidth: 520, height: 340, display: "flex", flexDirection: "column", gap: 14 }}>
+          <div className="hero-text-block" style={{ maxWidth: 520, height: 340, display: "flex", flexDirection: "column", gap: 14 }}>
             <p style={{ fontSize: 13, color: "var(--p-text-muted)", margin: 0, letterSpacing: "0.05em" }}>
               {'// cybersecurity student & developer'}
             </p>
@@ -125,7 +125,7 @@ export default function PortfolioHero() {
           </div>
 
           {/* ── Right: photo ── */}
-          <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 28, position: "relative", flexShrink: 0, paddingTop: 0 }}>
+          <div className="hero-photo-wrap" style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 28, position: "relative", flexShrink: 0, paddingTop: 0 }}>
             <div style={{ position: "relative" }}>
 
               {/* Decorative rectangles */}
@@ -136,7 +136,7 @@ export default function PortfolioHero() {
               </svg>
 
               {/* Photo */}
-              <div style={{
+              <div className="hero-photo-circle" style={{
                 width: 340, height: 340,
                 borderRadius: "50%",
                 border: `3px solid ${G}`,

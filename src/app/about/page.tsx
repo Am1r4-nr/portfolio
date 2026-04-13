@@ -7,7 +7,7 @@ const FONT = "'Space Mono', monospace";
 function SectionHeading({ tag, line = 120 }: { tag: string; line?: number }) {
   return (
     <div style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 36 }}>
-      <h2 style={{ fontSize: 18, fontWeight: 700, color: "#e8eaf0", margin: 0, fontFamily: FONT, whiteSpace: "nowrap" }}>
+      <h2 style={{ fontSize: 18, fontWeight: 700, color: "var(--p-heading)", margin: 0, fontFamily: FONT, whiteSpace: "nowrap" }}>
         <span style={{ color: P }}>#</span>{tag}
       </h2>
       <div style={{ height: 1, width: line, background: G, flexShrink: 0 }} />
@@ -17,48 +17,48 @@ function SectionHeading({ tag, line = 120 }: { tag: string; line?: number }) {
 
 export default function AboutPage() {
   return (
-    <div style={{ fontFamily: FONT, color: "#c9cdd4", minHeight: "100vh" }}>
+    <div style={{ fontFamily: FONT, color: "var(--p-text)", minHeight: "100vh" }}>
 
       {/* Nav */}
-      <nav style={{
+      <nav className="p-nav" style={{
         display: "flex", alignItems: "center", justifyContent: "space-between",
         padding: "22px 56px", borderBottom: "1px solid var(--p-nav-border)",
         background: "var(--p-nav-bg)", position: "sticky", top: 0, zIndex: 10,
       }}>
-        <Link href="/" style={{ display: "flex", alignItems: "center", gap: 10, fontSize: 15, color: "var(--p-heading)", textDecoration: "none" }}>
+        <Link href="/" style={{ display: "flex", alignItems: "center", gap: 10, fontSize: 15, color: "var(--p-heading)", textDecoration: "none", flexShrink: 0 }}>
           <div style={{ width: 22, height: 22, border: `2px solid ${G}`, borderRadius: 3, display: "flex", alignItems: "center", justifyContent: "center" }}>
             <div style={{ width: 9, height: 9, background: G, borderRadius: 1 }} />
           </div>
           Nabila Rahman
         </Link>
-        <Link href="/" style={{ fontSize: 12, color: "var(--p-text-muted)", textDecoration: "none", letterSpacing: "0.04em" }}>
+        <Link href="/" style={{ fontSize: 12, color: "var(--p-text-muted)", textDecoration: "none", letterSpacing: "0.04em", flexShrink: 0 }}>
           ← back to home
         </Link>
       </nav>
 
-      <div style={{ maxWidth: 960, margin: "0 auto", padding: "72px 40px 100px" }}>
+      <div className="about-page-padding" style={{ maxWidth: 960, margin: "0 auto", padding: "72px 40px 100px" }}>
 
         {/* ── Bio ── */}
-        <div style={{ display: "flex", alignItems: "flex-start", gap: 64, marginBottom: 80 }}>
-          <div style={{ flex: 1 }}>
+        <div className="bio-layout" style={{ display: "flex", alignItems: "flex-start", gap: 64, marginBottom: 80 }}>
+          <div style={{ flex: 1, minWidth: 0 }}>
             <div style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 28 }}>
-              <h1 style={{ fontSize: 28, fontWeight: 700, color: "#e8eaf0", margin: 0 }}>
+              <h1 style={{ fontSize: 28, fontWeight: 700, color: "var(--p-heading)", margin: 0 }}>
                 <span style={{ color: P }}>#</span>about-me
               </h1>
-              <div style={{ height: 1, width: 160, background: G }} />
+              <div style={{ height: 1, width: 160, background: G, flexShrink: 0 }} />
             </div>
-            <p style={{ fontSize: 12, lineHeight: 2, color: "#666", maxWidth: 520, marginBottom: 16 }}>
+            <p style={{ fontSize: 12, lineHeight: 2, color: "var(--p-text-muted)", maxWidth: 520, marginBottom: 16 }}>
               Final-year Information Assurance and Security (IAS) student at IIUM with hands-on experience
               in penetration testing, vulnerability assessment, threat detection, and security monitoring
               through active CTF competition and academic research.
             </p>
-            <p style={{ fontSize: 12, lineHeight: 2, color: "#666", maxWidth: 520 }}>
+            <p style={{ fontSize: 12, lineHeight: 2, color: "var(--p-text-muted)", maxWidth: 520 }}>
               Certified in Cybersecurity (CompTIA Security+) with practical expertise in Full-Stack Development
               (Laravel/PHP). Seeking a 6-month internship in Cybersecurity Analysis, SOC Operations, or IT Audit.
             </p>
           </div>
           <div style={{ flexShrink: 0, position: "relative" }}>
-            <div style={{ width: 220, height: 270, overflow: "hidden", borderRadius: 4, border: `1px solid #2a2a2a` }}>
+            <div style={{ width: 220, height: 270, overflow: "hidden", borderRadius: 4, border: `1px solid var(--p-border)` }}>
               <img
                 src="/profile/NabilaRahman.png"
                 alt="Nabila Rahman"
@@ -67,7 +67,7 @@ export default function AboutPage() {
             </div>
             <div style={{ position: "absolute", bottom: -16, right: -16, display: "grid", gridTemplateColumns: "repeat(5,1fr)", gap: 5 }}>
               {Array.from({ length: 25 }).map((_, i) => (
-                <div key={i} style={{ width: 4, height: 4, borderRadius: "50%", background: i % 3 === 0 ? `${G}55` : "#2a2a2a" }} />
+                <div key={i} style={{ width: 4, height: 4, borderRadius: "50%", background: i % 3 === 0 ? `${G}55` : "var(--p-border)" }} />
               ))}
             </div>
           </div>
@@ -100,10 +100,10 @@ export default function AboutPage() {
             },
           ].map(e => (
             <div key={e.degree} style={{ borderLeft: `2px solid ${e.color}`, paddingLeft: 20, marginBottom: 28 }}>
-              <div style={{ fontSize: 13, color: "#e8eaf0", fontWeight: 700, marginBottom: 4 }}>{e.degree}</div>
+              <div style={{ fontSize: 13, color: "var(--p-heading)", fontWeight: 700, marginBottom: 4 }}>{e.degree}</div>
               <div style={{ fontSize: 11, color: e.color, marginBottom: e.detail ? 4 : 0 }}>{e.institution}</div>
-              {e.detail && <div style={{ fontSize: 11, color: "#555", marginBottom: 2 }}>{e.detail}</div>}
-              <div style={{ fontSize: 11, color: "#444" }}>{e.period}</div>
+              {e.detail && <div style={{ fontSize: 11, color: "var(--p-text-dim)", marginBottom: 2 }}>{e.detail}</div>}
+              <div style={{ fontSize: 11, color: "var(--p-text-dim)" }}>{e.period}</div>
             </div>
           ))}
         </div>
@@ -138,10 +138,10 @@ export default function AboutPage() {
             },
           ].map(e => (
             <div key={e.role + e.org} style={{ borderLeft: `2px solid ${e.color}`, paddingLeft: 20, marginBottom: 28 }}>
-              <div style={{ fontSize: 13, color: "#e8eaf0", fontWeight: 700, marginBottom: 2 }}>{e.role}</div>
+              <div style={{ fontSize: 13, color: "var(--p-heading)", fontWeight: 700, marginBottom: 2 }}>{e.role}</div>
               <div style={{ fontSize: 11, color: e.color, marginBottom: 6 }}>{e.org}  ·  {e.period}</div>
               {e.points.map((p, i) => (
-                <div key={i} style={{ fontSize: 11, color: "#666", lineHeight: 1.9 }}>• {p}</div>
+                <div key={i} style={{ fontSize: 11, color: "var(--p-text-muted)", lineHeight: 1.9 }}>• {p}</div>
               ))}
             </div>
           ))}
@@ -151,7 +151,7 @@ export default function AboutPage() {
         <div style={{ marginBottom: 72 }}>
           <SectionHeading tag="cybersecurity-experience" line={60} />
           <div style={{ borderLeft: `2px solid ${G}`, paddingLeft: 20 }}>
-            <div style={{ fontSize: 13, color: "#e8eaf0", fontWeight: 700, marginBottom: 2 }}>Capture The Flag (CTF) Competitions</div>
+            <div style={{ fontSize: 13, color: "var(--p-heading)", fontWeight: 700, marginBottom: 2 }}>Capture The Flag (CTF) Competitions</div>
             <div style={{ fontSize: 11, color: G, marginBottom: 10 }}>May 2024 – December 2025</div>
             {[
               "Rank 17 — Girls in Capture the Flag 2024  |  RE:HACK",
@@ -160,7 +160,7 @@ export default function AboutPage() {
               "DEADFACE CTF 2025  |  Cyber Hacktics",
               "ICE CTF Chapter 0 2024",
             ].map((item, i) => (
-              <div key={i} style={{ fontSize: 11, color: "#666", lineHeight: 1.9 }}>• {item}</div>
+              <div key={i} style={{ fontSize: 11, color: "var(--p-text-muted)", lineHeight: 1.9 }}>• {item}</div>
             ))}
           </div>
         </div>
@@ -192,10 +192,10 @@ export default function AboutPage() {
             },
           ].map(e => (
             <div key={e.title} style={{ borderLeft: `2px solid ${e.color}`, paddingLeft: 20, marginBottom: 28 }}>
-              <div style={{ fontSize: 13, color: "#e8eaf0", fontWeight: 700, marginBottom: 2 }}>{e.title}</div>
+              <div style={{ fontSize: 13, color: "var(--p-heading)", fontWeight: 700, marginBottom: 2 }}>{e.title}</div>
               <div style={{ fontSize: 11, color: e.color, marginBottom: 6 }}>{e.sub}  ·  {e.period}</div>
               {e.points.map((p, i) => (
-                <div key={i} style={{ fontSize: 11, color: "#666", lineHeight: 1.9 }}>• {p}</div>
+                <div key={i} style={{ fontSize: 11, color: "var(--p-text-muted)", lineHeight: 1.9 }}>• {p}</div>
               ))}
             </div>
           ))}
@@ -211,9 +211,9 @@ export default function AboutPage() {
             { role: "Head of Economy", org: "Persatuan Seni Silat Cekak Malaysia (PSSCM), IIUM", period: "May 2023 – July 2023", desc: "Coordinated financial planning and resource allocation for IPT Leadership Course and IIUM Robotic Competition.", color: P },
           ].map(e => (
             <div key={e.role + e.org} style={{ borderLeft: `2px solid ${e.color}`, paddingLeft: 20, marginBottom: 24 }}>
-              <div style={{ fontSize: 13, color: "#e8eaf0", fontWeight: 700, marginBottom: 2 }}>{e.role}</div>
+              <div style={{ fontSize: 13, color: "var(--p-heading)", fontWeight: 700, marginBottom: 2 }}>{e.role}</div>
               <div style={{ fontSize: 11, color: e.color, marginBottom: 4 }}>{e.org}  ·  {e.period}</div>
-              <div style={{ fontSize: 11, color: "#666", lineHeight: 1.9 }}>{e.desc}</div>
+              <div style={{ fontSize: 11, color: "var(--p-text-muted)", lineHeight: 1.9 }}>{e.desc}</div>
             </div>
           ))}
         </div>
@@ -226,9 +226,9 @@ export default function AboutPage() {
             { title: "Gold & Silver Award — Feed2Educate, University in Action", period: "October 2024 – July 2025", desc: "Selected from a competitive pool of IIUM community project proposals spanning diverse technical and social domains.", color: P },
           ].map(e => (
             <div key={e.title} style={{ borderLeft: `2px solid ${e.color}`, paddingLeft: 20, marginBottom: 24 }}>
-              <div style={{ fontSize: 13, color: "#e8eaf0", fontWeight: 700, marginBottom: 2 }}>{e.title}</div>
+              <div style={{ fontSize: 13, color: "var(--p-heading)", fontWeight: 700, marginBottom: 2 }}>{e.title}</div>
               <div style={{ fontSize: 11, color: e.color, marginBottom: "desc" in e ? 4 : 0 }}>{e.period}</div>
-              {"desc" in e && <div style={{ fontSize: 11, color: "#666", lineHeight: 1.9 }}>{(e as {desc: string}).desc}</div>}
+              {"desc" in e && <div style={{ fontSize: 11, color: "var(--p-text-muted)", lineHeight: 1.9 }}>{(e as {desc: string}).desc}</div>}
             </div>
           ))}
         </div>
@@ -236,7 +236,7 @@ export default function AboutPage() {
         {/* ── Skills ── */}
         <div style={{ marginBottom: 72 }}>
           <SectionHeading tag="skills" line={130} />
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 12 }}>
+          <div className="about-skills-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 12 }}>
             {[
               { title: "Language Proficiency",  items: ["English — Fluent", "Bahasa Melayu — Native", "Mandarin — Beginner"], color: P },
               { title: "Programming Languages", items: ["Python", "HTML", "CSS", "JavaScript", "PHP", "Laravel"], color: G },
@@ -250,11 +250,11 @@ export default function AboutPage() {
                 {title === "Language Proficiency" ? (
                   <div style={{ fontFamily: FONT }}>
                     {items.map((item, i) => (
-                      <div key={i} style={{ color: "#888", fontSize: 11, lineHeight: 2 }}>{item}</div>
+                      <div key={i} style={{ color: "var(--p-text-muted)", fontSize: 11, lineHeight: 2 }}>{item}</div>
                     ))}
                   </div>
                 ) : (
-                  <div style={{ color: "#888", fontSize: 11, lineHeight: 2, fontFamily: FONT }}>{items.join("  ")}</div>
+                  <div style={{ color: "var(--p-text-muted)", fontSize: 11, lineHeight: 2, fontFamily: FONT }}>{items.join("  ")}</div>
                 )}
               </div>
             ))}

@@ -20,12 +20,12 @@ export default function ContactsPage() {
     <div style={{ fontFamily: FONT, color: "var(--p-text)", minHeight: "100vh" }}>
 
       {/* Nav */}
-      <nav style={{
+      <nav className="p-nav" style={{
         display: "flex", alignItems: "center", justifyContent: "space-between",
         padding: "22px 56px", borderBottom: "1px solid var(--p-nav-border)",
         background: "var(--p-nav-bg)", position: "sticky", top: 0, zIndex: 10,
       }}>
-        <Link href="/" style={{ display: "flex", alignItems: "center", gap: 10, fontSize: 15, color: "var(--p-heading)", textDecoration: "none" }}>
+        <Link href="/" style={{ display: "flex", alignItems: "center", gap: 10, fontSize: 15, color: "var(--p-heading)", textDecoration: "none", flexShrink: 0 }}>
           <div style={{ width: 22, height: 22, border: `2px solid ${G}`, borderRadius: 3, display: "flex", alignItems: "center", justifyContent: "center" }}>
             <div style={{ width: 9, height: 9, background: G, borderRadius: 1 }} />
           </div>
@@ -36,7 +36,7 @@ export default function ContactsPage() {
         </Link>
       </nav>
 
-      <div style={{ maxWidth: 960, margin: "0 auto", padding: "72px 40px 100px" }}>
+      <div className="contacts-page-padding" style={{ maxWidth: 960, margin: "0 auto", padding: "72px 40px 100px" }}>
 
         {/* Heading */}
         <div style={{ marginBottom: 12 }}>
@@ -47,10 +47,10 @@ export default function ContactsPage() {
         <p style={{ fontSize: 12, color: "var(--p-text-muted)", marginBottom: 56 }}>Who am I?</p>
 
         {/* Main row */}
-        <div style={{ display: "flex", gap: 64, alignItems: "flex-start", marginBottom: 80 }}>
+        <div className="contacts-main-row" style={{ display: "flex", gap: 64, alignItems: "flex-start", marginBottom: 80 }}>
 
           {/* Left: text */}
-          <div style={{ flex: 1, maxWidth: 440 }}>
+          <div className="contacts-text" style={{ flex: 1, maxWidth: 440 }}>
             <p style={{ fontSize: 12, lineHeight: 2.2, color: "var(--p-text-muted)" }}>
               I&apos;m interested in freelance opportunities and internship roles in
               Cybersecurity Analysis, SOC Operations, or Full-Stack Development.
@@ -60,7 +60,7 @@ export default function ContactsPage() {
           </div>
 
           {/* Right: contact cards */}
-          <div style={{ display: "flex", gap: 16, flexShrink: 0 }}>
+          <div className="contacts-cards-row" style={{ display: "flex", gap: 16, flexShrink: 0 }}>
 
             {/* Message me */}
             <div style={{ border: `1.5px solid ${P}`, borderRadius: 2, padding: "20px 24px", minWidth: 220, background: `${P}0a` }}>

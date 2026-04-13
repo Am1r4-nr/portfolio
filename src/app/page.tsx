@@ -131,10 +131,10 @@ export default function Home() {
         <div style={{ width: 'calc(100vw / 16)', flexShrink: 0 }} />
 
         {/* Content — centered in remaining space, same padding as hero */}
-        <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '96px 40px', gap: 40 }}>
+        <div className="about-section-content" style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '96px 40px', gap: 40 }}>
 
         {/* Left: text */}
-        <div style={{ flexShrink: 0, width: 300 }}>
+        <div className="about-section-text" style={{ flexShrink: 0, width: 300 }}>
           {/* Heading */}
           <div className="flex items-center gap-4 mb-10">
             <h2 className="text-2xl font-bold whitespace-nowrap" style={{ color: 'var(--p-heading)' }}>
@@ -161,8 +161,8 @@ export default function Home() {
         </div>
 
         {/* Right: skills grid */}
-        <div style={{ flexShrink: 0 }}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 12, width: 580 }}>
+        <div style={{ flex: 1, minWidth: 0 }}>
+          <div className="skills-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 12 }}>
             {[
               { title: 'Language Proficiency',  items: ['English — Fluent', 'Bahasa Melayu — Native / Fluent', 'Mandarin — Beginner'],                                  color: '#c084fc' },
               { title: 'Programming Languages', items: ['Python', 'HTML', 'CSS', 'JavaScript', 'PHP', 'Laravel'],                                                        color: '#b8f000' },
