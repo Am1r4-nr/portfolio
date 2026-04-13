@@ -31,7 +31,7 @@ export const BoxesCore = ({ className, ...rest }: { className?: string }) => {
         {cols.map((_, i) => (
           <div
             key={`col-${i}`}
-            style={{ borderLeftColor: '#1e1e1e', borderLeftWidth: '1px', borderLeftStyle: 'solid' }}
+            style={{ borderLeftColor: 'var(--p-grid-line)', borderLeftWidth: '1px', borderLeftStyle: 'solid' }}
             className="flex flex-col flex-1"
           >
             {rows.map((_, j) => (
@@ -42,7 +42,7 @@ export const BoxesCore = ({ className, ...rest }: { className?: string }) => {
                   transition: { duration: 0 },
                 }}
                 animate={{ transition: { duration: 2 } }}
-                style={{ borderBottomColor: '#1e1e1e', borderBottomWidth: '1px', borderBottomStyle: 'solid' }}
+                style={{ borderBottomColor: 'var(--p-grid-line)', borderBottomWidth: '1px', borderBottomStyle: 'solid' }}
                 className="flex-1 relative"
               />
             ))}

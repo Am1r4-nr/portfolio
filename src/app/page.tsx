@@ -137,21 +137,21 @@ export default function Home() {
         <div style={{ flexShrink: 0, width: 300 }}>
           {/* Heading */}
           <div className="flex items-center gap-4 mb-10">
-            <h2 className="text-2xl font-bold whitespace-nowrap" style={{ color: '#e8eaf0' }}>
+            <h2 className="text-2xl font-bold whitespace-nowrap" style={{ color: 'var(--p-heading)' }}>
               <span style={{ color: '#c084fc' }}>#</span>about-me
             </h2>
             <div className="h-px flex-1 max-w-[160px]" style={{ background: '#b8f000' }} />
           </div>
 
-          <p className="mb-6 text-sm" style={{ color: '#e8eaf0' }}>Hello, I&apos;m Nabila!</p>
+          <p className="mb-6 text-sm" style={{ color: 'var(--p-heading)' }}>Hello, I&apos;m Nabila!</p>
 
-          <p className="text-xs leading-7 mb-6 max-w-sm" style={{ color: '#666' }}>
+          <p className="text-xs leading-7 mb-6 max-w-sm" style={{ color: 'var(--p-text-muted)' }}>
             I&apos;m a cybersecurity student and front-end developer based in Malaysia.
             I can build responsive, modern interfaces from scratch and secure them with
             the latest best practices in information security.
           </p>
 
-          <p className="text-xs leading-7 mb-10 max-w-sm" style={{ color: '#666' }}>
+          <p className="text-xs leading-7 mb-10 max-w-sm" style={{ color: 'var(--p-text-muted)' }}>
             Transforming curiosity into expertise has been my drive. I&apos;ve competed in
             CTF tournaments, earned industry certifications, and continuously push to learn
             the newest technologies and frameworks in both development and cybersecurity.
@@ -170,11 +170,11 @@ export default function Home() {
               { title: 'Web & App Design',      items: ['Figma', 'Canva', 'Framer', 'Adobe Photoshop', 'React', 'React Native', 'Tailwind CSS', 'Bootstrap'],            color: '#b8f000' },
               { title: 'Productivity & Collab', items: ['Google Workspace', 'Microsoft Office', 'GitHub', 'Notion', 'WordPress'],                                        color: '#c084fc' },
             ].map(({ title, items, color }) => (
-              <div key={title} style={{ border: `1px solid ${color}55`, padding: '14px 18px', borderRadius: 2, background: `${color}08` }}>
+              <div key={title} style={{ border: `1.5px solid ${color}`, padding: '14px 18px', borderRadius: 2, background: `${color}18` }}>
                 <div style={{ color, fontSize: 13, fontWeight: 700, marginBottom: 8, fontFamily: "'Space Mono', monospace" }}>
                   {title}
                 </div>
-                <div style={{ color: '#888', fontSize: 11, lineHeight: 2, fontFamily: "'Space Mono', monospace" }}>
+                <div style={{ color: 'var(--p-text-muted)', fontSize: 11, lineHeight: 2, fontFamily: "'Space Mono', monospace" }}>
                   {items.join('  ')}
                 </div>
               </div>

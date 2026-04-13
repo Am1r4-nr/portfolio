@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Boxes } from "@/components/ui/background-boxes";
+import { LightPullThemeSwitcher } from "@/components/ui/light-pull-theme-switcher";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,7 +27,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased dark`}
     >
       <head>
         <link
@@ -34,13 +35,17 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
         />
       </head>
-      <body className="min-h-full flex flex-col" style={{ background: '#000' }}>
+      <body className="min-h-full flex flex-col">
         {/* ── Decorative background grid ── */}
         <div
           aria-hidden="true"
           style={{ position: 'fixed', inset: 0, zIndex: 0, pointerEvents: 'none', opacity: 1 }}
         >
           <Boxes />
+        </div>
+        {/* ── Theme switcher — fixed below nav ── */}
+        <div style={{ position: 'fixed', top: 66, right: 24, zIndex: 50 }}>
+          <LightPullThemeSwitcher />
         </div>
         {/* ── All page content sits above the pattern ── */}
         <div style={{ position: 'relative', zIndex: 1, flex: 1, display: 'flex', flexDirection: 'column' }}>

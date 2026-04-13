@@ -7,8 +7,8 @@ export default function ReadMoreBtn() {
       style={{
         fontFamily: "'Space Mono', monospace",
         fontSize: 12,
-        color: '#e8eaf0',
-        border: '1px solid #555',
+        color: 'var(--p-heading)',
+        border: '1px solid var(--p-border)',
         padding: '10px 22px',
         borderRadius: 2,
         textDecoration: 'none',
@@ -23,8 +23,8 @@ export default function ReadMoreBtn() {
       }}
       onMouseLeave={e => {
         const el = e.currentTarget;
-        el.style.borderColor = '#555';
-        el.style.color = '#e8eaf0';
+        el.style.borderColor = 'var(--p-border)';
+        el.style.color = 'var(--p-heading)';
       }}
     >
       Read more →
