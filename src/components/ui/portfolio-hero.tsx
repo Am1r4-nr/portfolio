@@ -42,7 +42,7 @@ export default function PortfolioHero() {
           </div>
           Nabila Rahman
         </div>
-        <ul className="p-nav-links" style={{ display: "flex", gap: 36, listStyle: "none", margin: 0, padding: 0 }}>
+        <ul className="hidden md:flex" style={{ gap: 36, listStyle: "none", margin: 0, padding: 0 }}>
           {navLinks.map(link => (
             <li key={link.label}>
               <a href={link.href} style={{ fontSize: 13, color: link.active ? "var(--p-heading)" : "var(--p-text-muted)", textDecoration: "none", letterSpacing: "0.04em" }}>
@@ -54,13 +54,14 @@ export default function PortfolioHero() {
 
         {/* Hamburger — mobile only */}
         <button
-          className="hamburger"
+          className="flex flex-col gap-[5px] md:hidden"
           onClick={() => setMenuOpen(o => !o)}
           aria-label="Toggle menu"
+          style={{ background: "none", border: "none", cursor: "pointer", padding: 6, flexShrink: 0 }}
         >
-          <span style={{ background: menuOpen ? P : "var(--p-heading)" }} />
-          <span style={{ background: menuOpen ? P : "var(--p-heading)", width: menuOpen ? 16 : 22 }} />
-          <span style={{ background: menuOpen ? P : "var(--p-heading)" }} />
+          <span style={{ display: "block", width: 22, height: 3, borderRadius: 2, background: menuOpen ? P : "var(--p-heading)", transition: "background 0.2s" }} />
+          <span style={{ display: "block", width: menuOpen ? 14 : 22, height: 3, borderRadius: 2, background: menuOpen ? P : "var(--p-heading)", transition: "all 0.2s" }} />
+          <span style={{ display: "block", width: 22, height: 3, borderRadius: 2, background: menuOpen ? P : "var(--p-heading)", transition: "background 0.2s" }} />
         </button>
 
         {/* Mobile dropdown */}
