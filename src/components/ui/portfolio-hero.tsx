@@ -11,10 +11,10 @@ const BD   = "#1f1f1f";
 const FONT = "'Space Mono', monospace";
 
 const navLinks = [
-  { label: "home",     href: "#", active: true  },
-  { label: "works",    href: "#", active: false },
-  { label: "about-me", href: "#", active: false },
-  { label: "contacts", href: "#", active: false },
+  { label: "home",     href: "/",          active: true  },
+  { label: "works",    href: "#",          active: false },
+  { label: "about-me", href: "/about",    active: false },
+  { label: "contacts", href: "/contacts", active: false },
 ];
 
 const socials = [
