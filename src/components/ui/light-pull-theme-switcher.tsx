@@ -5,7 +5,8 @@ import { motion } from "motion/react";
 export function LightPullThemeSwitcher() {
   const toggleDarkMode = () => {
     const root = document.documentElement;
-    root.classList.toggle("dark");
+    const isDark = root.classList.toggle("dark");
+    localStorage.setItem("theme", isDark ? "dark" : "light");
   };
 
   return (

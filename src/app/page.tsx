@@ -164,7 +164,7 @@ export default function Home() {
         <div style={{ flexShrink: 0 }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 12, width: 580 }}>
             {[
-              { title: 'Language Proficiency',  items: ['English — Fluent', 'Bahasa Melayu — Native', 'Mandarin — Beginner'],                                            color: '#c084fc' },
+              { title: 'Language Proficiency',  items: ['English — Fluent', 'Bahasa Melayu — Native / Fluent', 'Mandarin — Beginner'],                                  color: '#c084fc' },
               { title: 'Programming Languages', items: ['Python', 'HTML', 'CSS', 'JavaScript', 'PHP', 'Laravel'],                                                        color: '#b8f000' },
               { title: 'Cybersecurity Tools',   items: ['Kali Linux', 'Burp Suite', 'Wireshark', 'Nmap', 'CyberChef', 'hashcat', 'RsaCtfTool', 'steghide', 'OpenSteg'], color: '#c084fc' },
               { title: 'Web & App Design',      items: ['Figma', 'Canva', 'Framer', 'Adobe Photoshop', 'React', 'React Native', 'Tailwind CSS', 'Bootstrap'],            color: '#b8f000' },
@@ -174,9 +174,17 @@ export default function Home() {
                 <div style={{ color, fontSize: 13, fontWeight: 700, marginBottom: 8, fontFamily: "'Space Mono', monospace" }}>
                   {title}
                 </div>
-                <div style={{ color: 'var(--p-text-muted)', fontSize: 11, lineHeight: 2, fontFamily: "'Space Mono', monospace" }}>
-                  {items.join('  ')}
-                </div>
+                {title === 'Language Proficiency' ? (
+                  <div style={{ fontFamily: "'Space Mono', monospace" }}>
+                    {items.map((item, i) => (
+                      <div key={i} style={{ color: 'var(--p-text-muted)', fontSize: 11, lineHeight: 2 }}>• {item}</div>
+                    ))}
+                  </div>
+                ) : (
+                  <div style={{ color: 'var(--p-text-muted)', fontSize: 11, lineHeight: 2, fontFamily: "'Space Mono', monospace" }}>
+                    {items.join('  ')}
+                  </div>
+                )}
               </div>
             ))}
           </div>

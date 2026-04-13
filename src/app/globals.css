@@ -131,16 +131,16 @@
 
 /* ── Portfolio theme variables ── */
 :root {
-  --p-bg: #F7E9E0;
-  --p-nav-bg: #f2e2d8;
-  --p-nav-border: #e0cfc6;
-  --p-grid-line: #e8d8ce;
+  --p-bg: #F2EAE0;
+  --p-nav-bg: #ebe3d9;
+  --p-nav-border: #d8d0c6;
+  --p-grid-line: #ddd5cb;
   --p-text: #111118;
-  --p-text-muted: #555550;
-  --p-text-dim: #999990;
-  --p-border: #d8c8be;
-  --p-heading: #111118;
-  --p-sidebar-line: #d8c8be;
+  --p-text-muted: #4a4540;
+  --p-text-dim: #7a7570;
+  --p-border: #c8c0b6;
+  --p-heading: #0f0d0c;
+  --p-sidebar-line: #c8c0b6;
 }
 
 html.dark {
@@ -162,3 +162,9 @@ body {
   color: var(--p-text);
   transition: background 0.3s ease, color 0.3s ease;
 }
+
+/* ── Cat decoration theme swap ── */
+html.dark  .dark-cat  { display: block !important; }
+html.dark  .light-cat { display: none  !important; }
+html:not(.dark) .dark-cat  { display: none  !important; }
+html:not(.dark) .light-cat { display: block !important; }

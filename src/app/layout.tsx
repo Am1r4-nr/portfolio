@@ -27,9 +27,20 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased dark`}
+      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <head>
+        {/* Restore theme before first paint to avoid flash */}
+        <script dangerouslySetInnerHTML={{ __html: `
+          (function() {
+            var theme = localStorage.getItem('theme');
+            if (theme === 'light') {
+              document.documentElement.classList.remove('dark');
+            } else {
+              document.documentElement.classList.add('dark');
+            }
+          })();
+        `}} />
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
@@ -43,6 +54,37 @@ export default function RootLayout({
         >
           <Boxes />
         </div>
+        {/* ── Cat decoration — fixed left side ── */}
+        {/* Dark mode cat */}
+        <img
+          src="/cat/darkmode.jpg"
+          aria-hidden="true"
+          className="dark-cat"
+          style={{ position: 'fixed', left: 0, bottom: 0, zIndex: 0, pointerEvents: 'none', width: 180, height: 'auto', display: 'block', mixBlendMode: 'screen' }}
+        />
+        {/* Light mode cat */}
+        <img
+          src="/cat/lightmode.jpg"
+          aria-hidden="true"
+          className="light-cat"
+          style={{ position: 'fixed', left: 0, bottom: 0, zIndex: 0, pointerEvents: 'none', width: 180, height: 'auto', display: 'none', mixBlendMode: 'multiply' }}
+        />
+
+        {/* ── Coffee — light mode only ── */}
+        <img
+          src="/cat/coffeelightmode.jpg"
+          aria-hidden="true"
+          className="light-cat"
+          style={{ position: 'fixed', right: 80, bottom: '18%', zIndex: 0, pointerEvents: 'none', width: 130, height: 'auto', display: 'none', mixBlendMode: 'multiply' }}
+        />
+        {/* ── Spec — dark mode only ── */}
+        <img
+          src="/cat/specdarkmode.jpg"
+          aria-hidden="true"
+          className="dark-cat"
+          style={{ position: 'fixed', right: 80, bottom: '18%', zIndex: 0, pointerEvents: 'none', width: 130, height: 'auto', display: 'block', mixBlendMode: 'screen', filter: 'invert(1)' }}
+        />
+
         {/* ── Theme switcher — fixed below nav ── */}
         <div style={{ position: 'fixed', top: 66, right: 24, zIndex: 50 }}>
           <LightPullThemeSwitcher />

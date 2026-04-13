@@ -22,16 +22,16 @@ export default function AboutPage() {
       {/* Nav */}
       <nav style={{
         display: "flex", alignItems: "center", justifyContent: "space-between",
-        padding: "22px 56px", borderBottom: "1px solid #1f1f1f",
-        background: "#000", position: "sticky", top: 0, zIndex: 10,
+        padding: "22px 56px", borderBottom: "1px solid var(--p-nav-border)",
+        background: "var(--p-nav-bg)", position: "sticky", top: 0, zIndex: 10,
       }}>
-        <Link href="/" style={{ display: "flex", alignItems: "center", gap: 10, fontSize: 15, color: "#e0e2e8", textDecoration: "none" }}>
+        <Link href="/" style={{ display: "flex", alignItems: "center", gap: 10, fontSize: 15, color: "var(--p-heading)", textDecoration: "none" }}>
           <div style={{ width: 22, height: 22, border: `2px solid ${G}`, borderRadius: 3, display: "flex", alignItems: "center", justifyContent: "center" }}>
             <div style={{ width: 9, height: 9, background: G, borderRadius: 1 }} />
           </div>
           Nabila Rahman
         </Link>
-        <Link href="/" style={{ fontSize: 12, color: "#555", textDecoration: "none", letterSpacing: "0.04em" }}>
+        <Link href="/" style={{ fontSize: 12, color: "var(--p-text-muted)", textDecoration: "none", letterSpacing: "0.04em" }}>
           ← back to home
         </Link>
       </nav>
