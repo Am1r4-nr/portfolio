@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useRef, HTMLAttributes } from 'react';
+import React, { useEffect, useRef, useState, HTMLAttributes } from 'react';
 
 const cn = (...classes: (string | undefined | null | false)[]) => {
   return classes.filter(Boolean).join(' ');
@@ -30,6 +30,26 @@ const CircularGallery = React.forwardRef<HTMLDivElement, CircularGalleryProps>(
     const innerDivRef = useRef<HTMLDivElement>(null);
     const itemRefsRef = useRef<(HTMLDivElement | null)[]>([]);
     const animationFrameRef = useRef<number | null>(null);
+
+    const [cardW, setCardW] = useState(300);
+    const [cardH, setCardH] = useState(400);
+    const [dynRadius, setDynRadius] = useState(radius);
+
+    useEffect(() => {
+      const updateSize = () => {
+        const vw = window.innerWidth;
+        if (vw < 480) {
+          setCardW(140); setCardH(185); setDynRadius(200);
+        } else if (vw < 768) {
+          setCardW(180); setCardH(240); setDynRadius(280);
+        } else {
+          setCardW(300); setCardH(400); setDynRadius(radius);
+        }
+      };
+      updateSize();
+      window.addEventListener('resize', updateSize);
+      return () => window.removeEventListener('resize', updateSize);
+    }, [radius]);
 
     const anglePerItem = 360 / items.length;
 
@@ -80,13 +100,15 @@ const CircularGallery = React.forwardRef<HTMLDivElement, CircularGalleryProps>(
               ref={el => { itemRefsRef.current[i] = el; }}
               role="group"
               aria-label={item.common}
-              className="absolute w-[300px] h-[400px]"
+              className="absolute"
               style={{
-                transform: `rotateY(${i * anglePerItem}deg) translateZ(${radius}px)`,
+                width: cardW,
+                height: cardH,
+                transform: `rotateY(${i * anglePerItem}deg) translateZ(${dynRadius}px)`,
                 left: '50%',
                 top: '50%',
-                marginLeft: '-150px',
-                marginTop: '-200px',
+                marginLeft: -cardW / 2,
+                marginTop: -cardH / 2,
                 opacity: 0.3,
               }}
             >

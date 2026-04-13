@@ -25,6 +25,7 @@ const socials = [
 
 export default function PortfolioHero() {
   const [hoverBtn, setHoverBtn] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <div style={{ background: "transparent", color: "var(--p-text)", fontFamily: FONT, minHeight: "100vh", display: "flex", flexDirection: "column" }}>
@@ -50,6 +51,33 @@ export default function PortfolioHero() {
             </li>
           ))}
         </ul>
+
+        {/* Hamburger — mobile only */}
+        <button
+          className="hamburger"
+          onClick={() => setMenuOpen(o => !o)}
+          aria-label="Toggle menu"
+        >
+          <span style={{ background: menuOpen ? P : "var(--p-heading)" }} />
+          <span style={{ background: menuOpen ? P : "var(--p-heading)", width: menuOpen ? 16 : 22 }} />
+          <span style={{ background: menuOpen ? P : "var(--p-heading)" }} />
+        </button>
+
+        {/* Mobile dropdown */}
+        {menuOpen && (
+          <div className="mobile-menu">
+            {navLinks.map(link => (
+              <a
+                key={link.label}
+                href={link.href}
+                onClick={() => setMenuOpen(false)}
+                style={{ color: link.active ? "var(--p-heading)" : "var(--p-text-muted)", fontFamily: FONT }}
+              >
+                <span style={{ color: P }}>#</span>{link.label}
+              </a>
+            ))}
+          </div>
+        )}
       </nav>
 
       {/* ── Body ── */}

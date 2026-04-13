@@ -193,10 +193,10 @@ export default function Home() {
       </section>
 
       {/* Certificates Section */}
-      <div className="w-full bg-transparent h-screen flex flex-col overflow-hidden">
+      <div className="w-full bg-transparent h-[60vh] md:h-screen flex flex-col overflow-hidden">
         <div className="text-center pt-16 pb-4 shrink-0">
           <h2
-            className="text-4xl font-bold tracking-tight"
+            className="text-2xl md:text-4xl font-bold tracking-tight"
             style={{ color: '#b8f000', fontFamily: "'Space Mono', monospace" }}
           >
             CERTIFICATES
