@@ -209,6 +209,9 @@ html:not(.dark) .light-cat { display: block !important; }
   .contacts-main-row { flex-direction: column !important; gap: 32px !important; }
   .contacts-cards-row { flex-direction: column !important; }
   .contacts-text { max-width: 100% !important; }
+
+  /* Works page map layout */
+  .works-map-grid { grid-template-columns: 1fr !important; }
 }
 
 /* See more / ghost button hover */
