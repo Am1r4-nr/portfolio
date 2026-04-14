@@ -3,6 +3,7 @@ import { CircularGallery, GalleryItem } from "@/components/ui/circular-gallery";
 import ProgrammeShowcase from "@/components/ui/programme-showcase";
 import CertButton from "@/components/ui/cert-button";
 import ReadMoreBtn from "@/components/ui/read-more-btn";
+import { ProjectCard } from "@/components/ui/project-card";
 
 const galleryData: GalleryItem[] = [
   {
@@ -189,6 +190,43 @@ export default function Home() {
             ))}
           </div>
         </div>
+        </div>
+      </section>
+
+      {/* Projects Section */}
+      <section className="w-full py-20 px-6" style={{ fontFamily: "'Space Mono', monospace" }}>
+        <div className="max-w-5xl mx-auto">
+          {/* Heading */}
+          <div className="flex items-center gap-4 mb-12">
+            <h2 className="text-2xl md:text-4xl font-bold whitespace-nowrap" style={{ color: '#b8f000' }}>
+              <span style={{ color: '#c084fc' }}>#</span>projects
+            </h2>
+            <div className="h-px flex-1 max-w-xs" style={{ background: '#b8f000' }} />
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <ProjectCard
+              title="E-Doptcat"
+              description="Real-time cat adoption & rescue management system for IIUM's Abu Hurairah Club. Features geospatial tracking, QR-based cat profiles, and secure FPX donation. Awarded 2nd Place for Real-World Impact at IIUM FYP Showcase."
+              imgSrc="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?q=80&w=2043&auto=format&fit=crop"
+              link="#"
+              linkText="Final Year Project"
+            />
+            <ProjectCard
+              title="WordPress Research Website"
+              description="Developed a WordPress website for IIUM's Research Unit 3: Information System, Internet and Governance. Delivered two full design proposals with distinct colour themes, sitemaps, and page layouts."
+              imgSrc="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?q=80&w=2069&auto=format&fit=crop"
+              link="#"
+              linkText="Web Development"
+            />
+            <ProjectCard
+              title="CTF Competitions"
+              description="Active CTF competitor since 2024 — Rank 17 at Girls in CTF 2024, Rank 50 at Girls in CTF 2025, and Rank 76 at UM CyberSecurity Summit CTF 2025. Competing under RE:HACK and Cyber Hacktics."
+              imgSrc="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=2070&auto=format&fit=crop"
+              link="/about"
+              linkText="View Experience"
+            />
+          </div>
         </div>
       </section>
 
