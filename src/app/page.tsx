@@ -209,23 +209,45 @@ export default function Home() {
               title="E-Doptcat"
               description="Real-time cat adoption & rescue management system for IIUM's Abu Hurairah Club. Features geospatial tracking, QR-based cat profiles, and secure FPX donation. Awarded 2nd Place for Real-World Impact at IIUM FYP Showcase."
               imgSrc="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?q=80&w=2043&auto=format&fit=crop"
-              link="#"
+              link="/projects"
               linkText="Final Year Project"
             />
             <ProjectCard
               title="WordPress Research Website"
               description="Developed a WordPress website for IIUM's Research Unit 3: Information System, Internet and Governance. Delivered two full design proposals with distinct colour themes, sitemaps, and page layouts."
               imgSrc="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?q=80&w=2069&auto=format&fit=crop"
-              link="#"
+              link="/projects"
               linkText="Web Development"
             />
             <ProjectCard
               title="CTF Competitions"
               description="Active CTF competitor since 2024 — Rank 17 at Girls in CTF 2024, Rank 50 at Girls in CTF 2025, and Rank 76 at UM CyberSecurity Summit CTF 2025. Competing under RE:HACK and Cyber Hacktics."
               imgSrc="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=2070&auto=format&fit=crop"
-              link="/about"
+              link="/projects"
               linkText="View Experience"
             />
+          </div>
+
+          {/* See more */}
+          <div className="flex justify-center mt-12">
+            <a
+              href="/projects"
+              className="ghost-btn"
+              style={{
+                fontFamily: "'Space Mono', monospace",
+                fontSize: 12,
+                border: "1px solid",
+                padding: "10px 28px",
+                borderRadius: 2,
+                textDecoration: "none",
+                letterSpacing: "0.05em",
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 8,
+              }}
+            >
+              see more →
+            </a>
           </div>
         </div>
       </section>

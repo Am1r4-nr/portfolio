@@ -211,6 +211,19 @@ html:not(.dark) .light-cat { display: block !important; }
   .contacts-text { max-width: 100% !important; }
 }
 
+/* See more / ghost button hover */
+.ghost-btn {
+  color: var(--p-heading);
+  border-color: var(--p-border);
+  background: transparent;
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+}
+.ghost-btn:hover {
+  color: #b8f000;
+  border-color: #b8f000;
+  background: #0d120033;
+}
+
 /* Mobile dropdown menu */
 .mobile-menu {
   display: none;
