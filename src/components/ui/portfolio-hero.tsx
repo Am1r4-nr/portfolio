@@ -12,6 +12,7 @@ const FONT = "'Space Mono', monospace";
 const navLinks = [
   { label: "home",     href: "/",          active: true  },
   { label: "works",    href: "#",          active: false },
+  { label: "projects", href: "/projects", active: false },
   { label: "about-me", href: "/about",    active: false },
   { label: "contacts", href: "/contacts", active: false },
 ];
